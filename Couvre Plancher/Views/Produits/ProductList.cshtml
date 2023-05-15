@@ -1,0 +1,103 @@
+﻿@model IEnumerable<Couvre_Plancher.Models.CouvrePlanche>
+
+
+<section id="" class="py-5 sections">
+    <div class="container">
+        <div class="title text-center">
+            <h2 class="position-relative d-inline-block">
+                Nos Produits
+            </h2>
+        </div>
+
+        <div class="row g-0">
+            <div class="d-flex flex-wrap justify-content-center mt-5">
+                <button type="button" class="btn m-2 text-dark active-filter-btn">Tous</button>
+                <button type="button" class="btn m-2 text-dark">Tendance</button>
+                <button type="button" class="btn m-2 text-dark">Promotion</button>
+                <button type="button" class="btn m-2 text-dark">Plus achetés</button>
+
+            </div>
+
+            <div class="collection-list mt-4 row gx-0 gy-3">
+
+                @foreach ( var cp in Model)
+                {
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                    <div class="special-img collection-img position-relative overflow-hidden">
+                        <img src=@cp.ImgLink class="w-100" />
+                        
+                    </div>
+                    <div class="text-center">
+                        @*<div class="rating mt-3">
+                            Céramique
+                        </div>*@
+                        <p class="text-capitalize mt-3 mb-1">@cp.Titre</p>
+                        <span class="fw-bold d-block">@cp.Prix $ / m</span>
+                        <a href="#" class="btn btn-primary mt-3">Commander</a>
+                    </div>
+                    </div>
+                }
+
+                
+
+                <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                    <div class="collection-img position-relative">
+                        <img src="https://www.decosurfaces.com/DATA/PRODUITIMAGE/5609~v~8434459272282.jpg" class="w-100" />
+
+                    </div>
+                    <div class="text-center">
+                        <div class="rating">
+                            Céramique
+                        </div>
+                        <p class="text-capitalize my-1">SERRATA SATINÉ</p>
+                        <span class="fw-bold">7,99 $ / m</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                    <div class="collection-img position-relative">
+                        <img src="https://www.decosurfaces.com/DATA/PRODUITIMAGE/5609~v~8434459272282.jpg" class="w-100" />
+
+                    </div>
+                    <div class="text-center">
+                        <div class="rating">
+                            Céramique
+                        </div>
+                        <p class="text-capitalize my-1">SERRATA SATINÉ</p>
+                        <span class="fw-bold">7,99 $ / m</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                    <div class="collection-img position-relative">
+                        <img src="https://www.decosurfaces.com/DATA/PRODUITIMAGE/5609~v~8434459272282.jpg" class="w-100" />
+
+                    </div>
+                    <div class="text-center">
+                        <div class="rating">
+                            Céramique
+                        </div>
+                        <p class="text-capitalize my-1">SERRATA SATINÉ</p>
+                        <span class="fw-bold">7,99 $ / m</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                    <div class="collection-img position-relative">
+                        <img src="https://www.decosurfaces.com/DATA/PRODUITIMAGE/5609~v~8434459272282.jpg" class="w-100" />
+
+                    </div>
+                    <div class="text-center">
+                        <div class="rating">
+                            Céramique
+                        </div>
+                        <p class="text-capitalize my-1">SERRATA SATINÉ</p>
+                        <span class="fw-bold">7,99 $ / m</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+

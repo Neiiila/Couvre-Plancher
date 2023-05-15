@@ -1,0 +1,106 @@
+﻿@inject IHttpContextAccessor context ; 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Couvre_Plancher</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Couvre_Plancher.styles.css" asp-append-version="true" />
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" asp-action="Index" asp-controller="Home">
+                <img src="~/img/logo.png" class="logo"/>
+                <span class="text-uppercase fw-lighter ms-2">HOUCOV</span>
+            </a>
+            <div class="order-lg-2 nav-btns">
+                <button type="button" class="btn position-relative">
+                    <i class="fa fa-search"></i>
+                </button>
+                <button type="button" class="btn position-relative">
+
+                    @{
+                        String username = context.HttpContext.Session.GetString("username") ; 
+                        if(  username == null )
+                        {
+                            <a asp-action="SignIn" asp-controller="Authentification">
+                                <i class="fa fa-user text-dark"></i>
+                            </a>
+
+                        }
+                        else
+                        {
+                            <a asp-action="SignIn" asp-controller="Authentification">
+                                <i class="fa fa-right-from-bracket text-dark"></i>
+                            </a>
+                        }
+                    }
+                </button>
+            </div>
+            <button class="navbar-toggler border-0 " type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse order-1" id="navMenu">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" asp-action="Index" asp-controller="Home">Accueil</a>
+                    </li>
+                    <li class="nav-item  px-2 py-2">
+                        <a class="nav-link  text-uppercase text-dark" asp-action="ProductList" asp-controller="Produits">Nos Produis</a>
+                    </li>
+                    <li class="nav-item  px-2 py-2">
+                        <a class="nav-link  text-uppercase text-dark" asp-action="terms_of_use" asp-controller="Home">Terms d'utilisation</a>
+                    </li>
+                    <li class="nav-item  px-2 py-2">
+                        <a class="nav-link  text-uppercase text-dark" asp-action="Index" asp-controller="Home">Vos commandes </a>
+                    </li>
+                    <li class="nav-item  px-2 py-2">
+                        @{
+                         if( username == null)
+                        {
+                            <a class="nav-link  text-uppercase text-dark border-0" asp-action="Index" asp-controller="Home"> à Propos de nous </a>
+                        }
+                         else
+                         {
+                                <a class="nav-link  text-uppercase text-dark border-0" asp-action="ProductManage" asp-controller="Authentification"> Dashboard </a>
+                          }
+                        }
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+    <div class="">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Couvre_Plancher - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

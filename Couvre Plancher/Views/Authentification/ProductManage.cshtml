@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Couvre_Plancher.Models.CouvrePlanche>
+@{
+    Layout = "_Layout_"; 
+}
+
+<section class="py-5 sections product-list-body">
+
+    <div class="container">
+        <div class="row">
+            <div class="d-flex justify-content-between">
+                <h2>Gestionnaire de Produits </h2> 
+                <a asp-action="AddProduct" asp-controller="Produits" class="add-link">
+                    <span>
+                        <i class="fa fa-duotone fa-plus"></i>
+                            Nouveau produit
+                    </span>
+                    <i class="subLi"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="row">
+            @foreach( var cp in Model)
+           {
+                <div class="col-lg-3 col-md-4 mb-3">
+                    <div class="product-box">
+                        <div class="product-inner-box position-relative">
+                            <div class="icons position-absolute">
+                                <a href="@Url.Action("EditForm","Produits",new { id = cp.Id })" class="text-decoration-none text-dark"> <i class="fas fa-pen"></i> </a>
+                                <a href="@Url.Action("Delete","Produits",new { id = cp.Id })" class="text-decoration-none text-dark"><i class="fas fa-trash"></i></a>
+                            </div>
+                            <img src=@cp.ImgLink class="img-fluid" />
+                      
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">
+                                <h3>@cp.Titre </h3>
+                            </div>
+                            <div class="product-number">N° <span>@cp.Id</span></div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+           
+            </div>
+        
+    </div> 
+   
+</section>
+
+
+

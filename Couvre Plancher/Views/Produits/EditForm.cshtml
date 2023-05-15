@@ -1,0 +1,58 @@
+﻿@model Couvre_Plancher.Models.CouvrePlanche
+@{
+    Layout = "_Layout_";
+ }
+
+        
+<section class=" py-5 sections product-list-body container">
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="carousel-inner">
+                    <img class="d-block w-100" src=@Model.ImgLink />
+                </div>
+            </div>
+            <div class="col-md-5 ">
+                <form method="post">
+                    <input type="number" hidden value="@Model.Id" />
+                    <div class="input-group">
+                        <input type="text" required name="titre" value="@Model.Titre" />
+                        <label>Titre</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" required name="prix" value=@Model.Prix />
+                        <label>Prix</label>
+                    </div>
+
+                    <div class="input-group">
+                        <textarea name="description" > @Model.Description </textarea>
+                        <label>Description</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" required name="imgLink" value=
+                            />
+                        <label>Image</label>
+                    </div>
+
+                    <button type="submit" id="btn-submit-login" class="btn btn-primary">Modifier</button>
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+</section>
+        
+
+
+
+
+

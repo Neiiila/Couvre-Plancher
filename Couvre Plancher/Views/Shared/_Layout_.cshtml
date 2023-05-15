@@ -1,0 +1,67 @@
+﻿@inject IHttpContextAccessor context ;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Couvre_Plancher</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="~/css/siteDashboard.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Couvre_Plancher.styles.css" asp-append-version="true" />
+</head>
+<body>
+
+    <nav id="">
+        <ul>
+            <li>
+                <a asp-action="Index" class="logo" asp-controller="Home">
+                    <img src="~/img/logo.png" class="logo" />
+                    <span class="text-uppercase fw-lighter ms-2 nav-item">HOUCOV</span>
+                    <p class="text-logo">manager</p>
+                </a>
+            </li>
+            <li>
+                <a asp-controller="Authentification" asp-action="ProductManage">
+                    <i class="fas fa-layer-group"></i>
+                    <span class="nav-item">Produits</span>
+                </a>
+            </li>
+            <li>
+                <a asp-controller="Commandes" asp-action="CommandList">
+                    <i class="fas fa-solid fa-cart-shopping"></i>
+                    <span class="nav-item">Commandes</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-list-check"></i>
+                    <span class="nav-item">Ventes</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-light fa-users"></i>
+                    <span class="nav-item">Utilisateurs</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" class="logout">
+                    <i class="fas fa-light fa-sign-out-alt"></i>
+                    <span class="nav-item"> <b> @context.HttpContext.Session.GetString("username") </b></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="" id="home-section">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

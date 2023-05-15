@@ -1,0 +1,29 @@
+﻿
+
+<section class="py-5 sections">
+    <div class="mainRegistration">
+        <form id="login-form" method="post">
+            @*<h3 class="mb-3">Sign In</h3>*@
+            <div class="title text-center mb-4">
+                <h2 class="position-relative d-inline-block">
+                    Sign In 
+                </h2>
+            </div>
+            <div class="text-center">
+                @{
+                    if( ViewBag.result == false ) 
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            Mot de passe ou email est incorrecte
+                        </div>
+                    }
+                }
+                
+                <input type="email" name="email" id="email" placeholder="Email" class="form-control mb-3"/>
+                <input type="password" id="pwd" name="password" placeholder="Mot de Passe" class="form-control mb-3" />
+                <button type="submit" id="btn-submit-login" class="btn btn-primary">Se connecter</button>
+                
+            </div>
+        </form>
+    </div>
+</section>

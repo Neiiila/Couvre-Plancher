@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "_Layout_" ; 
+}
+<section class="py-5 sections container product-add-product">
+
+
+    <form method="post">
+        <h1>Add Product</h1>
+
+        <div class="input-group">
+            <input type="text" required name="titre" /> 
+            <label>Titre</label>
+        </div>
+
+        <div class="input-group">
+            <input type="text" required name="prix" />
+            <label>Prix</label>
+        </div>
+
+        <div class="input-group">
+            <textarea name="description"></textarea>
+            <label>Description</label>
+        </div>
+
+        <div class="input-group">
+            <input type="text" required name="imgLink" />
+            <label>Image</label>
+        </div>
+
+        <button type="submit" id="btn-submit-login" class="btn btn-primary">Ajouter</button>
+
+    </form>
+</section>

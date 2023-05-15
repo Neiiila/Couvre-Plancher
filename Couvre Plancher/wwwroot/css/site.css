@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto:wght@300;400&display=swap');
+
+:root {
+    --lg-font: 'Dancing Script', cursive;
+    --sm-font: 'Roboto', sans-serif;
+    --orange: #ffd07d ; 
+    --maron: rgb(85, 85, 85);
+}
+body{
+    font-family: var(--sm-font) ; 
+}
+.logo{
+    height : 50px ; 
+}
+
+.btn:not(.nav-btns button) {
+    background-color: #fff;
+    color: rgb(85, 85, 85);
+    padding: 10px 28px;
+    border-radius: 25px;
+    border: 1px solid rgb(85, 85, 85);
+}
+.btn:not(.nav-btns button):hover {
+    background-color: var(--orange);
+    color: #fff;
+    border-color: var(--orange);
+}
+/*crousel-inner*/
+.title_header h2 {
+    font-family: var(--lg-font);
+}
+.title_header h1 {
+    font-size: 60px;
+}
+
+
+.navbar{
+     box-shadow: 0 3px 9px 3px rgba(0,0,0,0.1) ; 
+}
+.navbar-brand img{
+    width: 30px ; 
+}
+.navbar-brand span{
+    letter-spacing: 2px ; 
+    font-family: var(--lg-font);
+}
+.nav-link:hover{
+    color: var(--orange)!important;
+}
+.fa:hover {
+    color: var(--orange) !important;
+}
+.nav-item{
+    border-bottom: 0.5px solid rgba(0,0,0, 0.05);
+}
+
+#header{
+    background: url("../img/bg-1.jpg") top/cover no-repeat;
+}
+
+@media(min-width: 992px){
+    .nav-item {
+        border-bottom: none;
+    }
+}
+
+.sections {
+    margin-top: 100px;
+}
+.title h2::before{
+    position: absolute; 
+    content: ""; 
+    width: 4px; 
+    height: 50px; 
+    background-color: var(--orange);
+    left: -20px; 
+    top: 50%; 
+    transform: translateY(-50%);
+}
+.active-filter-btn{
+    background-color: var(--orange)!important;
+    color:#fff!important;
+    border-color: var(--orange)!important;
+}
+.special-img span{
+    top: 20px ; 
+    right: 20px;
+}
+.special-img .btn{
+    padding: 8px 20px!important ; 
+}
+.special-img img{
+    transition: all 0.3s ease; 
+}
+.special-img:hover img{
+    transform: scale(1.2);
+}
+
+/*Sign up */
+.mainRegistration{
+    width: 100%; 
+    max-width: 400px;
+    padding: 3rem 4rem ; 
+    margin: auto; 
+}
